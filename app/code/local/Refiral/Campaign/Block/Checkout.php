@@ -27,12 +27,12 @@ class Refiral_Campaign_Block_Checkout extends Mage_Core_Block_Template
 				$qty = $item->getQtyToInvoice();
 				$cartInfo[] = array('id' => $item->getProductId(), 'name' => $name, 'quantity' => $qty);
 			}
-			$cartInfo = serialize($cartInfo);
+			$cartInfoString = serialize($cartInfo);
 			$order_name = $order->getCustomerName(); // Get customer's name
 			$order_email = $order->getCustomerEmail(); // Get customer's email id
 			
 			// Call invoiceRefiral function
-			echo "<script>invoiceRefiral('$order_total', '$order_total', '$order_coupon', '$cartInfo', '$order_name', '$order_email');</script>";
+			echo "<script>invoiceRefiral('$order_total', '$order_total', '$order_coupon', '$cartInfoString', '$order_name', '$order_email');</script>";
 		}
     }
 

@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Refiral_Campaign>
-            <version>1.0.0</version>
+            <version>1.0.2</version>
         </Refiral_Campaign>
     </modules>
     <frontend>
@@ -18,7 +18,7 @@
 		<layout>
 			<updates>
 				<campaign>
-					<file>campaign.xml</file>
+					<file>refiral_campaign.xml</file>
 				</campaign>
 			</updates>
 		</layout>
@@ -46,7 +46,7 @@
 	        <general>
 	            <campaign>
 	                <active>1</active>
-	                <title>Loyalty</title>                	
+	                <title>Campaign</title>                	
 	            </campaign>
 	        </general>
 	</default>
