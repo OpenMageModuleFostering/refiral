@@ -72,7 +72,7 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
             $scriptAppend = '';
             $script .= '<script>var showButton = true;</script>'."\n";
         }
-        $script .= '<script src="//rfer.co/api/v1/js/all.js"></script>'."\n";
+        $script .= '<script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//rfer.co/api/v1/js/all.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>'."\n";
         return $script.$scriptAppend;
     }
 }
