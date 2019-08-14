@@ -1,20 +1,6 @@
 <!-- Refiral Campaign Code Begin -->
 <script type="text/javascript">
-if ( (typeof jQuery === 'undefined') && !window.jQuery )
-{
-	document.write(unescape("%3Cscript type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'%3E%3C/script%3E"));
-}
-else
-{
-	if((typeof jQuery === 'undefined') && window.jQuery) 
-	{
-		jQuery = window.jQuery;
-	}
-	else if((typeof jQuery !== 'undefined') && !window.jQuery) 
-	{
-		window.jQuery = jQuery;
-	}
-}
+function whenAvailable(n,e){var i=10;window.setTimeout(function(){window[n]?e(window[n]):window.setTimeout(arguments.callee,i)},i)}
 </script>
 <script>var $j = jQuery.noConflict();</script>
 <?php

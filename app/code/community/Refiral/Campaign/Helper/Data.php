@@ -64,7 +64,7 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
             $order_email = $order->getCustomerEmail(); // Get customer's email id
                 
             // Call invoiceRefiral function
-            $scriptAppend = "<script>invoiceRefiral('$order_total', '$order_total', '$order_coupon', '$cartInfoString', '$order_name', '$order_email', '$orderId');</script>"."\n";
+            $scriptAppend = "<script>whenAvailable('invoiceRefiral',function(){invoiceRefiral('$order_total','$order_total','$order_coupon','$cartInfoString','$order_name','$order_email','$orderId')});</script>"."\n";
             $script .= '<script>var showButton = false;</script>'."\n";
         }
         else
