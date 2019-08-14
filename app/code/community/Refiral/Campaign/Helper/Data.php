@@ -52,6 +52,7 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
         $controller = $request->getControllerName();
         $action = $request->getActionName();
 		$flag = false;
+		$currency = Mage::app()->getStore()->getCurrentCurrencyCode();
 		$script = "<script>var apiKey = '".$this->getKey()."';</script>"."\n";
         if ($module == 'checkout' && $controller == 'onepage' && $action == 'success')
         {
@@ -75,12 +76,12 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
             $order_email = $order->getCustomerEmail(); // Get customer's email id
                 
             // Call invoiceRefiral function
-            $scriptAppend = "<script>whenAvailable('invoiceRefiral',function(){invoiceRefiral('$order_total','$order_total','$order_coupon','$cartInfoString','$order_name','$order_email','$orderId')});</script>"."\n";
+            $scriptAppend = "<script>whenAvailable('invoiceRefiral',function(){invoiceRefiral('$order_total','$order_total','$order_coupon','$cartInfoString','$order_name','$order_email','$orderId', '$currency')});</script>"."\n";
 			
 			if($this->debug())
 			{
 				$scriptAppend .=  "<script>console.log('Module: ".$module.", Controller: ".$controller.", Action: ".$action."');</script>";
-				$scriptAppend .=  "<script>console.log('Total: ".$order_total.", Coupon: ".$order_coupon.", Cart: ".$cartInfoString.", Name: ".$order_name.", Email: ".$order_email.", Id: ".$orderId."');</script>";
+				$scriptAppend .=  "<script>console.log('Total: ".$order_total.", Coupon: ".$order_coupon.", Cart: ".$cartInfoString.", Name: ".$order_name.", Email: ".$order_email.", Id: ".$orderId.", Currency: ".$currency."');</script>";
 			}
             $script .= '<script>var showButton = false;</script>'."\n";
         }
