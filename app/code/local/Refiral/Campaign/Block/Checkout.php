@@ -16,17 +16,18 @@ class Refiral_Campaign_Block_Checkout extends Mage_Core_Block_Template
 	    	$order = new Mage_Sales_Model_Order();
 	    	$orderId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
 	    	$order->loadByIncrementId($orderId);	// Load order details
-			$order_total = round($order->getGrandTotal()); // Get grand total
+			$order_total = round($order->getGrandTotal(), 2); // Get grand total
 			$order_coupon = $order->getCouponCode();	// Get coupon used
 			$items = $order->getAllItems(); // Get items info
-			$cartInfo = '';
+			$cartInfo = array();
 			// Convert object to string
 			foreach($items as $item) {
 				$product = Mage::getModel('catalog/product')->load($item->getProductId());
 				$name = $item->getName();
 				$qty = $item->getQtyToInvoice();
-				$cartInfo .= $name.'-'.$qty. ', ';
+				$cartInfo[] = array('id' => $item->getProductId(), 'name' => $name, 'quantity' => $qty);
 			}
+			$cartInfo = serialize($cartInfo);
 			$order_name = $order->getCustomerName(); // Get customer's name
 			$order_email = $order->getCustomerEmail(); // Get customer's email id
 			

@@ -1,7 +1,7 @@
 {
     "name": "OpenMageModuleFostering/Refiral",
     "type": "magento-module",
-    "license": "GPLv2",
+    "license": "GPLv3",
     "homepage": "",
     "description": "Launch your referral campaign virally.",
     "authors": [
