@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>Refiral</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <stability>stable</stability>
     <license uri="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GPLv3</license>
     <channel>community</channel>
     <extends/>
-    <summary>Launch your referral campaign virally.</summary>
+    <summary>Launch your referral campaigns virally.</summary>
     <description>Boost your sales up to 3X with our new hybrid marketing channel. Run your personalized, easy to integrate fully automated referral program.</description>
     <notes>Stable version of Refiral extension.</notes>
     <authors><author><name>Refiral</name><user>refiral</user><email>support@refiral.com</email></author></authors>
-    <date>2014-05-29</date>
-    <time>04:35:06</time>
-    <contents><target name="magelocal"><dir name="Refiral"><dir name="Campaign"><dir name="Block"><file name="Campaign.php" hash="7d44a27e546f73d808b5e25b14ae8e0e"/><file name="Checkout.php" hash="f678586e1c978beb46f3b81511b23a03"/></dir><dir name="Helper"><file name="Data.php" hash="fa55e018e847a099126b48b719c91bb5"/></dir><dir name="etc"><file name="config.xml" hash="96f78200d264a0a6c2a581ec32f50876"/><file name="system.xml" hash="4ebb1f08d22f90878915eb5fc4dd7370"/></dir></dir></dir></target><target name="magedesign"><dir><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="refiral_campaign.xml" hash="7a11d660175f9de93949f9e290a2d48f"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir><dir name="modules"><file name="Refiral_Campaign.xml" hash="58b93da6e3a823bbdd7c6f8fb94551e9"/></dir></dir></target></contents>
+    <date>2014-06-17</date>
+    <time>14:14:54</time>
+    <contents><target name="magecommunity"><dir name="Refiral"><dir name="Campaign"><dir name="Helper"><file name="Data.php" hash="e18360938c6c71bbc1f130047be936ce"/></dir><dir name="etc"><file name="config.xml" hash="52b5e1071e6076e8c988457470eb2a94"/><file name="system.xml" hash="c06478f003c118dee930380be2eb5af2"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="refiral.xml" hash="cfa836379eb2dff10a1d49f6d1e68f25"/></dir><dir name="template"><dir name="Refiral"><file name="campaign.phtml" hash="644f808bc08fda3b9a8f363eb77c0c34"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Refiral_Campaign.xml" hash="46ccfad98a5e7cba5fdc3cf5e8e3a003"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
