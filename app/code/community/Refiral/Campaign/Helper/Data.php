@@ -54,7 +54,7 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
 		$flag = false;
 		$currency = Mage::app()->getStore()->getCurrentCurrencyCode();
 		$script = "<script>var apiKey = '".$this->getKey()."';</script>"."\n";
-        if ($module == 'checkout' && $controller == 'onepage' && $action == 'success')
+        if (($module == 'checkout' && ($controller == 'onepage' || $controller == 'onestep') && $action == 'success') || ($module == 'securecheckout' && $controller == 'index' && $action == 'success'))
         {
             $order = new Mage_Sales_Model_Order();
             $orderId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
