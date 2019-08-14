@@ -70,6 +70,7 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
                 $cartInfo[] = array('id' => $item->getProductId(), 'name' => $name, 'quantity' => $qty);
             }
             $cartInfoString = serialize($cartInfo);
+			$cartInfoString = addcslashes($cartInfoString, "'");
             $order_name = $order->getCustomerName(); // Get customer's name
             $order_email = $order->getCustomerEmail(); // Get customer's email id
                 
