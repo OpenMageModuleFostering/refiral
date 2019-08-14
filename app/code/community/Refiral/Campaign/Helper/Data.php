@@ -30,6 +30,15 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
         else
             return false;
     }
+	
+	public function debug()
+	{
+        $debug = Mage::getStoreConfig('general/refiral_campaign/debug');
+		if(!empty($debug))
+            return true;
+        else
+            return false;
+	}
     
     public function getKey()
     {
@@ -42,7 +51,8 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
         $module = $request->getModuleName();
         $controller = $request->getControllerName();
         $action = $request->getActionName();
-        $script = "<script>var apiKey = '".$this->getKey()."';</script>"."\n";
+		$flag = false;
+		$script = "<script>var apiKey = '".$this->getKey()."';</script>"."\n";
         if ($module == 'checkout' && $controller == 'onepage' && $action == 'success')
         {
             $order = new Mage_Sales_Model_Order();
@@ -65,11 +75,20 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
                 
             // Call invoiceRefiral function
             $scriptAppend = "<script>whenAvailable('invoiceRefiral',function(){invoiceRefiral('$order_total','$order_total','$order_coupon','$cartInfoString','$order_name','$order_email','$orderId')});</script>"."\n";
+			
+			if($this->debug())
+			{
+				$scriptAppend .=  "<script>console.log('Module: ".$module.", Controller: ".$controller.", Action: ".$action."');</script>";
+				$scriptAppend .=  "<script>console.log('Total: ".$order_total.", Coupon: ".$order_coupon.", Cart: ".$cartInfoString.", Name: ".$order_name.", Email: ".$order_email.", Id: ".$orderId."');</script>";
+			}
             $script .= '<script>var showButton = false;</script>'."\n";
         }
         else
         {
-            $scriptAppend = '';
+			if($this->debug())
+				$scriptAppend =  "<script>console.log('Module: ".$module.", Controller: ".$controller.", Action: ".$action."');</script>";
+            else
+				$scriptAppend = '';
             $script .= '<script>var showButton = true;</script>'."\n";
         }
         $script .= '<script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//rfer.co/api/v1/js/all.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>'."\n";
