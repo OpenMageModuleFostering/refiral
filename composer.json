@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Refiral",
+    "type": "magento-module",
+    "license": "GPLv2",
+    "homepage": "",
+    "description": "Launch your referral campaign virally.",
+    "authors": [
+    {
+        "name": "Refiral",
+        "email": "support@refiral.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
