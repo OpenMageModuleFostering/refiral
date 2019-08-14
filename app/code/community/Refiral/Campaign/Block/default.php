@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!--
+<?php
 /**
  * Refiral_Campaign extension
  * 
@@ -15,15 +14,12 @@
  * @copyright      Copyright (c) 2014
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
--->
-<config>
-    <modules>
-        <Refiral_Campaign>
-            <active>true</active>
-            <codePool>community</codePool>
-            <depends>
-                <Mage_Core />
-             </depends>
-        </Refiral_Campaign>
-    </modules>
-</config>
+/**
+ * Refiral Settings view block
+ *
+ * @category    Refiral
+ * @package     Refiral_Campaign
+ * @author      Ultimate Module Creator
+ */
+class Refiral_Campaign_Block_Default extends Mage_Core_Block_Template {
+}

@@ -1,42 +1,54 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Refiral_Campaign extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Refiral
+ * @package        Refiral_Campaign
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
 <config>
     <modules>
         <Refiral_Campaign>
-            <version>1.0.0</version>
+            <version>1.0.4</version>
         </Refiral_Campaign>
     </modules>
     <global>
         <blocks>
-            <campaign>
+            <refiral_campaign>
                 <class>Refiral_Campaign_Block</class>
-            </campaign>
+            </refiral_campaign>
         </blocks>
         <helpers>
             <campaign>
                 <class>Refiral_Campaign_Helper</class>
             </campaign>
         </helpers>
-        <models>
-            <campaign>
-                <class>Refiral_Campaign_Model</class>
-            </campaign>
-        </models>
     </global>
     <frontend>
         <layout>
             <updates>
-                <refiral>
-                    <file>refiral.xml</file>
-                </refiral>
+                <refiral_campaign>
+                    <file>refiral_campaign.xml</file>
+                </refiral_campaign>
             </updates>
         </layout>
-    </frontend>   
-	<default>
-	        <general>
-	            <campaign>
-	                <active>1</active>
-	                <title>Campaign</title>                	
-	            </campaign>
-	        </general>
-	</default>
+    </frontend>
+    <default>
+        <refiral_campaign>
+            <refiral>
+                <active>1</active>
+                <meta_title>Refiral Settings</meta_title>
+            </refiral>
+        </refiral_campaign>
+    </default>
 </config>
