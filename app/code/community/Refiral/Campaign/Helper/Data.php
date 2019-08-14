@@ -57,6 +57,8 @@ class Refiral_Campaign_Helper_Data extends Mage_Core_Helper_Abstract {
         if (($module == 'checkout' && $controller == 'onestep' && $action == 'success')
             || ($module == 'checkout' && $controller == 'onepage' && $action == 'success')
             || ($module == 'securecheckout' && $controller == 'index' && $action == 'success')
+            || ($module == 'customdownloadable' && $controller == 'onepage' && $action == 'success')
+            || ($module == 'onepagecheckout' && $controller == 'index' && $action == 'success')
             || ($module == 'onestepcheckout' && $controller == 'index' && $action == 'success'))
         {
             $order = new Mage_Sales_Model_Order();
